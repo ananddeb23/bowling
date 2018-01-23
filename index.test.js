@@ -13,5 +13,8 @@ describe('Differnt frame combinations as inputs must return correct score', () =
 	it('Frames without any strikes or spare must have must return correct score', () => {
 		expect(index.score(ar1)).toEqual(90);
 	});
+	it('Frames with any strikes and spare must have must return correct score', () => {
+		expect(index.score(ar2)).toEqual(166);
+	});
 
 });
