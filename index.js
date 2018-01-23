@@ -10,7 +10,7 @@ function score(arr){
 
 		if(arr[i] === 10){
 			if(arr[i+1] === undefined || arr[i+2] === undefined){
-				return -1;
+				return -1; // missing values in array
 			}
 			tot += arr[i] + arr[i+1] +arr[i+2];
 			//indiscore[currFrame] = arr[i] + arr[i+1] +arr[i+2];
@@ -20,13 +20,13 @@ function score(arr){
 		}
 		else if(arr[i] < 10 ){
 			if(arr[i+1] === undefined ){
-				return -1;
+				return -1;// missing values in array
 			}
 
 			let temp = arr[i] + arr[i+1];
 			if(temp === 10){
 				if(arr[i+2] === undefined){
-					return -1;
+					return -1; // missing values in array
 				}
 				tot += 10 + arr[i+2];
 				//indiscore[currFrame] = 10 + arr[i+2];

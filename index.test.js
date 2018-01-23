@@ -58,6 +58,9 @@ describe('Input must be validated', () =>{
 	it('In case of excess values with all strikes return -2', () => {
 		expect((index.score(ar6))).toEqual(-2);
 	});
-	
+	// it('In case of excess values with all spares return -2', () => {
+	// 	expect((index.score(ar7))).toEqual(-2);
+	// });
+
 
 });
