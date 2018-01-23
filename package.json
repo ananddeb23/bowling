@@ -1,0 +1,25 @@
+{
+  "name": "bowling",
+  "version": "1.0.0",
+  "description": "assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ananddeb23/bowling.git"
+  },
+  "author": "Anand Shanker Deb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ananddeb23/bowling/issues"
+  },
+  "homepage": "https://github.com/ananddeb23/bowling#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.1.4"
+  }
+}
