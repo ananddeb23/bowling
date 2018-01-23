@@ -1,9 +1,14 @@
 let index = require('./index');
+
 describe('Output type being tested', () =>{
 	let ar1 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-	let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10];
-	it('Return type must be a number', () => {
+	let ar2 = [10,10,10,10,10,10,10,10,10,10];
+
+	it('Return type must be a number when given correct sequence', () => {
 		expect(typeof(index.score(ar1))).toBe('number');
+	});
+	it('Return type must be a number when given in-correct sequence', () => {
+		expect(typeof(index.score(ar2))).toBe('number');
 	});
 
 });
@@ -26,13 +31,22 @@ describe('Differnt frame combinations as inputs must return correct score', () =
 	});
 
 });
-describe('Validating input', () =>{
+describe('Input must be validated', () =>{
 	let ar1 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 	let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10,5];
 	let ar3 = [10,10,10,10,10,10,10,10,10,10];
-	it('In case of missing values return -1', () => {
+	let ar4 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3];
+	let ar5 = [9,1,6,4,7,3,5,5,3,7,2,8,1,9,2,8,9,1,7,3];
+	it('In case of missing values  when there is a strike at the end return -1', () => {
 		expect((index.score(ar3))).toEqual(-1);
 	});
+	it('In case of missing values when there is no strike or spare at the end return -1', () => {
+		expect((index.score(ar4))).toEqual(-1);
+	});
+	it('In case of missing values  when there is a spare at the end return -1', () => {
+		expect((index.score(ar5))).toEqual(-1);
+	});
+
 	it('In case of excess values return -2', () => {
 		expect((index.score(ar2))).toEqual(-2);
 	});
