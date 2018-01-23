@@ -28,10 +28,13 @@ describe('Differnt frame combinations as inputs must return correct score', () =
 });
 describe('Validating input', () =>{
 	let ar1 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
-	let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10];
+	let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10,5];
 	let ar3 = [10,10,10,10,10,10,10,10,10,10];
 	it('In case of missing values return -1', () => {
 		expect((index.score(ar3))).toEqual(-1);
+	});
+	it('In case of excess values return -2', () => {
+		expect((index.score(ar2))).toEqual(-2);
 	});
 
 });
