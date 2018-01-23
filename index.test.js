@@ -30,7 +30,7 @@ describe('Validating input', () =>{
 	let ar1 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 	let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10];
 	let ar3 = [10,10,10,10,10,10,10,10,10,10];
-	it('Missing frames must safely be rejected', () => {
+	it('In case of missing values return -1', () => {
 		expect((index.score(ar3))).toEqual(-1);
 	});
 
