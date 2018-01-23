@@ -41,7 +41,7 @@ describe('Input must be validated', () =>{
 	let ar4 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3];
 	let ar5 = [9,1,6,4,7,3,5,5,3,7,2,8,1,9,2,8,9,1,7,3];
 	let ar6 = [10,10,10,10,10,10,10,10,10,10,10,9,4];
-	let ar7 = [9,1,6,4,7,3,5,5,3,7,2,8,1,9,2,8,9,1,7,3,8,6];
+	let ar7 = [9,1,6,4,7,3,5,5,3,7,2,8,1,9,2,8,9,1,7,3,8,6,6];
 	it('In case of missing values  when there is a strike at the end return -1', () => {
 		expect((index.score(ar3))).toEqual(-1);
 	});
@@ -58,9 +58,9 @@ describe('Input must be validated', () =>{
 	it('In case of excess values with all strikes return -2', () => {
 		expect((index.score(ar6))).toEqual(-2);
 	});
-	// it('In case of excess values with all spares return -2', () => {
-	// 	expect((index.score(ar7))).toEqual(-2);
-	// });
+	it('In case of excess values with all spares return -2', () => {
+		expect((index.score(ar7))).toEqual(-2);
+	});
 
 
 });
