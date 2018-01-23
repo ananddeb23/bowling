@@ -8,12 +8,18 @@ function score(arr){
 		//  console.log('frame', frame,' i = ', i);
 
 		if(arr[i] === 10){
+			if(arr[i+1] === undefined || arr[i+2] === undefined){
+				return -1;
+			}
 			tot += arr[i] + arr[i+1] +arr[i+2];
 			indiscore[frame] = arr[i] + arr[i+1] +arr[i+2];
 			frame +=1;
 			//i+=1;
 		}
 		else if(arr[i] < 10 ){
+			if(arr[i+1] === undefined ){
+				return -1;
+			}
 			let temp = arr[i] + arr[i+1];
 			if(temp === 10){
 				tot += 10 + arr[i+2];
@@ -29,7 +35,9 @@ function score(arr){
 			}
 		}
 	}
-
+	if(frame < 10){
+		return -1;
+	}
 	return tot;
 
 }
