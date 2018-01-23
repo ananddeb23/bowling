@@ -35,5 +35,5 @@ function score(arr){
 }
 // let ar1 = [3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6];
 // let ar2 = [3,6,4,6,10,10,10,5,3,6,4,7,0,1,2,10,9,10];
-console.log(score(ar2));
+//console.log(score(ar2));
 module.exports.score = score;
